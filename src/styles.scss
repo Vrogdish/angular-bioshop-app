@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+
+
+// Reset
+html,
+body,
+textarea,
+figure,
+label,
+ul,p,h1,h2,h3 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Typography
+body {
+  font-family: "Roboto", sans-serif;
+  // background-color: #f3f3f3;
+  p {
+    font-size: 16px;
+  }
+  h1 {
+    font-family: PT Sans;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 4.8px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  caption {
+    font-size: 14px;
+  }
+}
+.logo {
+  font-family: "Italianno", cursive;
+  font-size: 64px;
+}
+
+.button-large {
+  font-size: 18px;
+  padding: 20px 80px;
+  border-radius: 1rem;
+  background: linear-gradient(178deg, #A3E635 0%, #4D7C0F 100%);
+  color: white;
+  border: transparent;
+}

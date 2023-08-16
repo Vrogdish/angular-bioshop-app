@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "title" : "Miel",
+        "description" : "description du produit n°1",
+        "category": "food",
+        "imageUrl" : "image1.jpg",
+        "price" : 0
+    },
+    {
+        "id":2,
+        "title" : "produit n°2",
+        "description" : "description du produit n°2",
+        "category": "",
+        "imageUrl" : "image1.jpg",
+        "price" : 0
+    },
+    {
+        "id":3,
+        "title" : "produit n°3",
+        "description" : "description du produit n°3",
+        "category": "",
+        "imageUrl" : "image1.jpg",
+        "price" : 0
+    },
+    {
+        "id":4,
+        "title" : "produit n°4",
+        "description" : "description du produit n°4",
+        "category": "",
+        "imageUrl" : "image1.jpg",
+        "price" : 0
+    },
+    {
+        "id":5,
+        "title" : "produit n°5",
+        "description" : "description du produit n°5",
+        "category": "",
+        "imageUrl" : "image1.jpg",
+        "price" : 0
+    },
+    {
+        "id":6,
+        "title" : "produit n°6",
+        "description" : "description du produit n°6",
+        "category": "",
+        "imageUrl" : "image1.jpg",
+        "price" : 0
+    }
+]

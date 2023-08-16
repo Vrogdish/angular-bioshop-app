@@ -1,0 +1,24 @@
+<header>
+    <div class="logo">Bio-shop</div>
+    <nav>
+        <ul class="navbar">
+            <li class="navlink">
+                <i class="fa-solid fa-store"></i>
+                <span>Nos produits</span>
+                
+            </li>
+            <li class="navlink" *ngIf="auth == false">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Mon compte</span>
+            </li>
+            <li class="navlink" *ngIf="auth == true">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>{{userName}}</span>
+            </li>
+            <li class="navlink">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span>Mon Panier</span>
+            </li>
+        </ul>
+    </nav>
+</header>

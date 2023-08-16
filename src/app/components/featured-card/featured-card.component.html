@@ -1,0 +1,9 @@
+<div class="featured-card">
+  <img [src]="product.imageUrl" [alt]="product.title">
+  <div class="card-price">
+    {{product.price.toFixed(2)}}€
+  </div>
+  <div class="card-title">
+    <p>{{ product.title }}</p>
+  </div>
+</div>

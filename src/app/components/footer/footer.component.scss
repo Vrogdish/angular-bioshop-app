@@ -1,0 +1,63 @@
+@import "../../styles/variables.scss";
+
+footer {
+ background-color: $secondary-color;
+ display: flex;
+ justify-content: space-between;
+ padding: 50px 100px;
+
+    h3 {
+        margin-bottom: 30px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    form {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    };
+
+    .email-input {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    input[type = email] {
+        border: 1px solid black;
+        height: 45px;
+        border-radius: 2rem;
+        padding: 5px 20px;
+        width: 100%;
+    }
+
+    button {
+        position: absolute;
+        right: 5px;
+        border: transparent;
+        border-radius: 100%;
+        height: 35px;
+        width: 35px;
+        background: linear-gradient(180deg, #A3E635 0%, #4D7C0F 100%);
+
+        i{
+            color: white;
+            font-size: 16px;
+        }
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    i{
+        font-size: 30px;
+    }
+
+}
