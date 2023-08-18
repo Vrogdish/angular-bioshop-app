@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { InfosComponent } from './components/infos/infos.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProductComponent } from './pages/product/product.component';
+import { StoreComponent } from './pages/store/store.component';
+import { HomeComponent } from './pages/home/home.component';
+import {registerLocaleData} from "@angular/common"
+import * as fr from "@angular/common/locales/fr"
+import { BuyItComponent } from './components/buy-it/buy-it.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { CartComponent } from './pages/cart/cart.component';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +30,22 @@ import { FooterComponent } from './components/footer/footer.component';
     InfosComponent,
     AboutComponent,
     FooterComponent,
+    ProductComponent,
+    StoreComponent,
+    HomeComponent,
+    BuyItComponent,
+    BreadcrumbComponent,
+    CartComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ],
+  providers: [
+    {provide : LOCALE_ID, useValue: "fr-FR"}
+    
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    registerLocaleData(fr.default)
+  }
+}

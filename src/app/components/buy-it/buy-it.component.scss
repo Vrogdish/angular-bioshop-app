@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+
+.buy {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+
+  i {
+    cursor: pointer;
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .number {
+      width: 50px;
+      border: solid 2px black;
+      border-radius: 2rem;
+      text-align: center;
+      padding: 2px;
+    }
+  }
+  &-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background : $button-color ;
+    padding: 10px 30px;
+    border-radius: 2rem;
+    color: white;
+  }
+}

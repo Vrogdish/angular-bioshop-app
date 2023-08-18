@@ -1,7 +1,7 @@
-<div class="featured-card">
+<div   class="featured-card" (click)="goToProductPage()" >
   <img [src]="product.imageUrl" [alt]="product.title">
   <div class="card-price">
-    {{product.price.toFixed(2)}}€
+    {{product.price | currency:"EUR"}}
   </div>
   <div class="card-title">
     <p>{{ product.title }}</p>

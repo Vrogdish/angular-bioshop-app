@@ -1,0 +1,11 @@
+<div class="buy">
+  <div class="quantity">
+    <i class="fa-solid fa-minus" (click)="decreaseQuantity()"></i>
+    <div class="number">{{quantity}} </div>
+    <i class="fa-solid fa-plus" (click)="increaseQuantity()"></i>
+  </div>
+  <div class="buy-button">
+    <i class="fa-solid fa-cart-plus"></i>
+    <span (click)="addToCart()"> Ajouter au panier</span>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
-import { HttpClient, JsonpClientBackend } from '@angular/common/http';
+import { ProductsService } from 'src/app/services/products.service';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-featured',
@@ -8,12 +8,13 @@ import { HttpClient, JsonpClientBackend } from '@angular/common/http';
   styleUrls: ['./featured.component.scss'],
 })
 export class FeaturedComponent implements OnInit {
-  featuredList!: any;
+  featuredList!: Product[] | undefined;
 
-  constructor(private http: HttpClient) {}
+  constructor(private products: ProductsService) {}
 
   ngOnInit(): void {
-    const url: string = './assets/json/featured.json';
-    this.http.get(url).subscribe((res) => (this.featuredList = res));
+    this.products
+      .getAllProducts()
+      .subscribe((res) => ( this.featuredList = res.filter(product => product.featured === true)));
   }
 }
