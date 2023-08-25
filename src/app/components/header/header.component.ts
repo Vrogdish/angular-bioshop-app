@@ -1,5 +1,6 @@
-import { Component, OnInit, OnChanges,Input } from '@angular/core';
-// import { CartService } from 'src/app/services/cart.service';
+import { Component, OnInit} from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,18 +11,25 @@ export class HeaderComponent  implements OnInit {
   auth! : boolean 
   userName! : string 
   itemQuantity! : number
-  
 
-  // constructor(private cart : CartService) {}
-
-
+  constructor(private cart : CartService) {
+  }
 
   ngOnInit(): void {
     this.auth = false
     this.userName = "Cedric"
-    // this.itemQuantity = this.cart.mycart.length
+    this.cart._myCart.subscribe(value => this.itemQuantity = value.length)
+    
   }
   
 
- 
 }
+
+
+
+
+
+
+
+ 
+

@@ -1,0 +1,8 @@
+<div class="gallery-item">
+  <div class="picture">
+    <img [src]="product.imageUrl" [alt]="product.title" />
+  </div>
+  <h3>{{ product.title }}</h3>
+  <p class="price">{{ product.price | currency : "EUR" }}</p>
+  <app-buy-it size="small" [product]="product"></app-buy-it>
+</div>

@@ -1,8 +1,8 @@
 [
     {
         "id":1,
-        "title" : "Miel",
-        "description" : "description du produit n°1",
+        "title" : "Miel des Cevennes",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "category": "food",
         "imageUrl" : "./assets/image1.jpg",
         "price" : 10,
@@ -10,47 +10,47 @@
     },
     {
         "id":2,
-        "title" : "produit n°2",
-        "description" : "description du produit n°2",
-        "category": "",
+        "title" : "Confiture de fraises",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "category": "food",
         "imageUrl" : "./assets/image2.jpg",
         "price" : 8,
         "featured" : true
     },
     {
         "id":3,
-        "title" : "produit n°3",
-        "description" : "description du produit n°3",
-        "category": "",
+        "title" : "Crème hydratante",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "category": "beauty",
         "imageUrl" : "./assets/image3.jpg",
         "price" : 7.90,
         "featured" : true
     },
     {
         "id":4,
-        "title" : "produit n°4",
-        "description" : "description du produit n°4",
-        "category": "",
+        "title" : "Shampoing au bamboo",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "category": "beauty",
         "imageUrl" : "./assets/image4.jpg",
-        "price" : 0,
+        "price" : 4.50,
         "featured" : true
     },
     {
         "id":5,
-        "title" : "produit n°5",
-        "description" : "description du produit n°5",
-        "category": "",
+        "title" : "Spaghetti artisanale",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "category": "food",
         "imageUrl" : "./assets/image5.jpg",
-        "price" : 0,
+        "price" : 6,
         "featured" : false
     },
     {
         "id":6,
-        "title" : "produit n°6",
-        "description" : "description du produit n°6",
-        "category": "",
+        "title" : "Savon à l'huile d'olives",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "category": "beauty",
         "imageUrl" : "./assets/image6.jpg",
-        "price" : 0,
+        "price" : 5.5,
         "featured" : true
     }
 ]

@@ -1,0 +1,21 @@
+<div class="cart-item">
+  <div class="delete" (click)="deleteFromCart()"><i class="fa-solid fa-xmark"></i></div>
+  <div class="picture">
+    <img [src]="cartItem.product.imageUrl" [alt]="cartItem.product.title" />
+  </div>
+  <div class="content">
+    <h3 class="title">{{ cartItem.product.title }}</h3>
+    <p>{{ cartItem.product.description }}</p>
+    <p class="price">{{ cartItem.product.price | currency : "EUR" }}</p>
+
+    <div class="quantity">
+      <p>Quantité :</p>
+      
+      <i class="fa-solid fa-minus" (click)="removeQuantity()"></i>
+      <div class="number">{{ cartItem.quantity }}</div>
+      <i class="fa-solid fa-plus" (click)="addQuantity()"></i>
+      <p class="item-total">Sous total : {{ cartItem.product.price * cartItem.quantity | currency : "EUR"}}</p>
+    </div>
+  </div>
+</div>
+<div class="separate"></div>

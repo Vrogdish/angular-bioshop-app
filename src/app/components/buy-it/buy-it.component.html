@@ -1,11 +1,29 @@
-<div class="buy">
+<div class="buy" *ngIf="!productIsAdd">
   <div class="quantity">
     <i class="fa-solid fa-minus" (click)="decreaseQuantity()"></i>
-    <div class="number">{{quantity}} </div>
+    <div class="number">{{ quantity }}</div>
     <i class="fa-solid fa-plus" (click)="increaseQuantity()"></i>
   </div>
-  <div class="buy-button">
+  <div *ngIf="size === 'large'" class="buy-button" (click)="addToCart()">
     <i class="fa-solid fa-cart-plus"></i>
-    <span (click)="addToCart()"> Ajouter au panier</span>
+    <span> Ajouter au panier</span>
+  </div>
+  <div *ngIf="size === 'small'" class="buy-button" (click)="addToCart()">
+    <i class="fa-solid fa-cart-plus"></i>
+  </div>
+</div>
+
+<div class="buy" *ngIf="productIsAdd">
+  <div class="quantity">
+    <i class="fa-solid fa-minus"></i>
+    <div class="number">{{ quantity }}</div>
+    <i class="fa-solid fa-plus"></i>
+  </div>
+
+  <div *ngIf="size === 'large'" class="buy-button">
+    <span> Produit ajouté</span>
+  </div>
+  <div *ngIf="size === 'small'" class="buy-button">
+    <i class="fa-solid fa-check"></i>
   </div>
 </div>

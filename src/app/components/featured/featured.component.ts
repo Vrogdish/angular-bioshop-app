@@ -8,7 +8,7 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./featured.component.scss'],
 })
 export class FeaturedComponent implements OnInit {
-  featuredList!: Product[] | undefined;
+  featuredList!: Product[] ;
 
   constructor(private products: ProductsService) {}
 

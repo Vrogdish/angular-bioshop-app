@@ -18,6 +18,9 @@ import * as fr from "@angular/common/locales/fr"
 import { BuyItComponent } from './components/buy-it/buy-it.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { CartComponent } from './pages/cart/cart.component';
     BuyItComponent,
     BreadcrumbComponent,
     CartComponent,
+    CartItemComponent,
+    GalleryComponent,
+    GalleryItemComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ],
   providers: [

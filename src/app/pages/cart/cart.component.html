@@ -1,1 +1,21 @@
-<p>cart works!</p>
+<app-breadcrumb place="Mon panier"></app-breadcrumb>
+<div class="mycart">
+  <h2>Mon panier</h2>
+  <div *ngIf="myCart.length === 0" class="no-product">
+    Aucun Produit dans votre panier !
+</div>
+  <div *ngIf="myCart.length != 0">
+    <app-cart-item
+      *ngFor="let cartItem of myCart"
+      [cartItem]="cartItem"
+    ></app-cart-item>
+
+    <div class="validation">
+        <p>
+      Total de votre commande : {{ totalPrice | currency : "EUR" }} </p>
+         <button class="button-large" (click)="validateCart()">Valider ma commande</button>
+
+    </div>
+  </div>
+</div>
+<app-infos></app-infos>
