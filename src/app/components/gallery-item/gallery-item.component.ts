@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 
 @Component({
@@ -8,5 +9,12 @@ import { Product } from 'src/app/models/product';
 })
 export class GalleryItemComponent {
   @Input() product! : Product
+
+  constructor(  private router : Router) {}
+
+
+  goToProductPage() {
+    this.router.navigate(["/product/"+ this.product.id])
+  }
 
 }

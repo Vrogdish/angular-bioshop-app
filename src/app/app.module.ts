@@ -21,6 +21,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
+import { AccountComponent } from './pages/account/account.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { GalleryItemComponent } from './components/gallery-item/gallery-item.com
     CartItemComponent,
     GalleryComponent,
     GalleryItemComponent,
+    AccountComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ],
   providers: [

@@ -1,0 +1,98 @@
+@import "../../styles/variables.scss";
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  animation: opacity ease-in 100ms both;
+}
+
+.account {
+  width: 600px;
+  height: 100vh;
+  background-color: $light-grey-color;
+  animation: slide ease-in-out 200ms both 100ms;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .close {
+    text-align: end;
+    padding-top: 20px;
+    margin-left: 500px;
+    i {
+      font-size: 32px;
+    }
+  }
+
+  .modal-title {
+    text-align: center;
+    margin: 50px 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 50px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 20px 0;
+
+      p {
+        text-align: end;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  input {
+    height: 40px;
+    border: solid transparent 1px;
+    border-radius: 10px;
+  }
+
+  .button-large {
+    border-radius: 2rem;
+    padding: 15px;
+  }
+
+  .subscribe {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    gap: 50px;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+    from {
+        transform: translate(100%);
+    }
+    to {
+        transform: translate(0);
+    }
+}

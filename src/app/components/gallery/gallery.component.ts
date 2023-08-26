@@ -5,15 +5,35 @@ import { ProductsService } from 'src/app/services/products.service';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
+  styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-  productsList! : Product[]
+  productsList!: Product[];
+  ProductsFiltered!: Product[];
+  activeFilter!: 'all' | 'food' | 'beauty' | 'other';
 
-constructor(private products : ProductsService){}
+  constructor(private products: ProductsService) {}
 
-ngOnInit(): void {
-  this.products.getAllProducts().subscribe((value) => {this.productsList = value})
-}
+  ngOnInit(): void {
+    this.products.getAllProducts().subscribe((value) => {
+      this.productsList = value;
+    });
+  }
 
+  activateFilter(filter: 'all' | 'food' | 'beauty' | 'other') {
+    this.activeFilter = filter;
+
+    if (filter === 'all') {
+      this.products.getAllProducts().subscribe((value) => {
+        this.productsList = value;
+      });
+    } else {
+      this.products.getAllProducts().subscribe((value) => {
+        const searchResult: Product[] = value.filter(
+          (item) => item.category === filter
+        );
+        searchResult ? (this.productsList = searchResult) : null;
+      });
+    }
+  }
 }

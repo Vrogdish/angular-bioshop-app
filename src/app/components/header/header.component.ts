@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Subscription } from 'rxjs';
+import { ConnexionService } from 'src/app/services/connexion.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent  implements OnInit {
   userName! : string 
   itemQuantity! : number
 
-  constructor(private cart : CartService) {
+  constructor(private cart : CartService, private modal:ConnexionService) {
   }
 
   ngOnInit(): void {
@@ -22,6 +23,9 @@ export class HeaderComponent  implements OnInit {
     
   }
   
+  toggleModal(){
+    this.modal.toggleModal()
+  }
 
 }
 

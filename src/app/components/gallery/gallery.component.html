@@ -1,4 +1,12 @@
+<div class="filter">
+    <div (click)="activateFilter('all')" >Tous</div>
+    <div (click)="activateFilter('food')">Alimentaire</div>
+    <div (click)="activateFilter('beauty')">Santé et beauté</div>
+    <div (click)="activateFilter('other')">Divers</div>
+</div>
+
 <div class="gallery">
+    
     <div *ngFor="let product of productsList">
         <app-gallery-item  [product]="product"></app-gallery-item>
     </div>
