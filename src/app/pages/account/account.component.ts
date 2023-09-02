@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConnexionService } from 'src/app/services/connexion.service';
 
 @Component({
@@ -6,12 +6,28 @@ import { ConnexionService } from 'src/app/services/connexion.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss']
 })
-export class AccountComponent {
+export class AccountComponent implements OnInit{
+  auth! : boolean
 
-  constructor(private modal : ConnexionService){}
+  constructor(private connexion : ConnexionService){}
 
-  toggleModal(){
-    this.modal.toggleModal()
+  ngOnInit(): void {
+    this.auth = false
+    this.connexion.userAuth.subscribe((value)=>{if (value === true){this.auth=true} else {this.auth=false}})
   }
 
+  toggleModal(){
+    this.connexion.toggleModal()
+  }
+
+  login(){
+    this.connexion.login("johndoe@exemple.com","password123")
+    this.connexion.toggleModal()
+  }
+
+  logout(){
+    this.connexion.logout()
+    
+    this.connexion.toggleModal()
+  }
 }

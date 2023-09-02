@@ -22,6 +22,10 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
 import { AccountComponent } from './pages/account/account.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -45,7 +49,7 @@ import { AccountComponent } from './pages/account/account.component';
     GalleryItemComponent,
     AccountComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), ],
   providers: [
     {provide : LOCALE_ID, useValue: "fr-FR"}
     

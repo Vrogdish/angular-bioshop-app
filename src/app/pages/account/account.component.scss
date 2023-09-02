@@ -27,7 +27,14 @@
     margin-left: 500px;
     i {
       font-size: 32px;
+      cursor: pointer;
     }
+  }
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .modal-title {
@@ -50,6 +57,7 @@
       p {
         text-align: end;
         margin-top: 10px;
+        cursor: pointer;
       }
     }
   }

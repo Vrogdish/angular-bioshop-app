@@ -6,13 +6,13 @@
         <i class="fa-solid fa-store"></i>
         <span>Nos produits</span>
       </a>
-      <div  class="navlink" (click)="toggleModal()">
+      <div  class="navlink" *ngIf="auth == false" (click)="toggleModal()">
         <i class="fa-solid fa-circle-user"></i>
-        <span>Mon compte</span>
+        <span >Mon compte</span>
       </div>
-      <a class="navlink" *ngIf="auth == true">
+      <a class="navlink" *ngIf="auth == true" (click)="toggleModal()">
         <i class="fa-solid fa-circle-user"></i>
-        <span>{{ userName }}</span>
+        <span>Bonjour {{ userName }}</span>
       </a>
       <a [routerLink]="['cart']" class="navlink">
         <i class="fa-solid fa-basket-shopping"></i>

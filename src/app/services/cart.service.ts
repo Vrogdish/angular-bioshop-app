@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cartItem';
 import { BehaviorSubject } from 'rxjs';
+import { Firestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -21,13 +22,6 @@ export class CartService {
     });
   }
 
-  // get myCart(): BehaviorSubject<CartItem[]> {
-  //   return this._myCart;
-  // }
-
-  // set myCart(value: BehaviorSubject<CartItem[]>) {
-  //   this._myCart = value;
-  // }
 
   addTocart(cartItem: CartItem) {
     const existingItems = this._myCart.value;
