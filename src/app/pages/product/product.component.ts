@@ -19,7 +19,8 @@ export class ProductComponent implements OnInit {
 
     if (productId) {
       const id=+productId
-      this.products.getAllProducts().subscribe(res => this.product = res.find(product => product.id === id))
+      this.products.getProducts()
+      this.products.products.subscribe(value => this.product = value.find(product => product.id === id))
     }
 
   }

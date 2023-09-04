@@ -8,13 +8,24 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./featured.component.scss'],
 })
 export class FeaturedComponent implements OnInit {
-  featuredList!: Product[] ;
+  featuredList!: Product[];
 
   constructor(private products: ProductsService) {}
 
   ngOnInit(): void {
-    this.products
-      .getAllProducts()
-      .subscribe((res) => ( this.featuredList = res.filter(product => product.featured === true)));
+    // this.products
+    //   .getAllProducts()
+    //   .subscribe(
+    //     (res) =>
+    //       (this.featuredList = res.filter(
+    //         (product) => product.featured === true
+    //       ))
+    //   );
+
+    this.products.getProducts();
+    this.products.products.subscribe((value) =>
+    (this.featuredList = value.filter(
+      (product) => product.featured === true
+    )))
   }
 }

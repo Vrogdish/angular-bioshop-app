@@ -7,5 +7,13 @@ export class Product {
         public imageUrl : string,
         public price : number,
         public featured : boolean
-    ) {}
+    ) {
+        (this.id = id),
+        (this.title = title),
+        (this.description = description),
+        (this.category = category),
+        (this.imageUrl = imageUrl),
+        (this.price = price),
+        (this.featured = featured)
+    }
 }

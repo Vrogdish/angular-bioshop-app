@@ -15,7 +15,8 @@ export class GalleryComponent implements OnInit {
   constructor(private products: ProductsService) {}
 
   ngOnInit(): void {
-    this.products.getAllProducts().subscribe((value) => {
+    this.products.getProducts()
+    this.products.products.subscribe((value) => {
       this.productsList = value;
     });
   }
@@ -24,11 +25,11 @@ export class GalleryComponent implements OnInit {
     this.activeFilter = filter;
 
     if (filter === 'all') {
-      this.products.getAllProducts().subscribe((value) => {
+      this.products.products.subscribe((value) => {
         this.productsList = value;
       });
     } else {
-      this.products.getAllProducts().subscribe((value) => {
+      this.products.products.subscribe((value) => {
         const searchResult: Product[] = value.filter(
           (item) => item.category === filter
         );
