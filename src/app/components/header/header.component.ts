@@ -26,7 +26,7 @@ export class HeaderComponent  implements OnInit {
       } else {
         this.auth=false
       }})
-    console.log(this.auth);
+   
     
   }
   

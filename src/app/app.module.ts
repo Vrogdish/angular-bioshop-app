@@ -13,8 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductComponent } from './pages/product/product.component';
 import { StoreComponent } from './pages/store/store.component';
 import { HomeComponent } from './pages/home/home.component';
-import {registerLocaleData} from "@angular/common"
-import * as fr from "@angular/common/locales/fr"
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
 import { BuyItComponent } from './components/buy-it/buy-it.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -22,11 +22,13 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
 import { AccountComponent } from './pages/account/account.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { MyAccountComponent } from './components/my-account/my-account.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,16 +50,24 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     GalleryComponent,
     GalleryItemComponent,
     AccountComponent,
+    SignInComponent,
+    MyAccountComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), ],
-  providers: [
-    {provide : LOCALE_ID, useValue: "fr-FR"}
-    
+
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor() {
-    registerLocaleData(fr.default)
+    registerLocaleData(fr.default);
   }
 }

@@ -20,7 +20,7 @@ export class ProfileService {
       const q = query(userCollection, where('uid', '==', uid));
       const userDocSnap = await getDocs(q);
 
-      let result: any = [];
+      let result: any[] = [];
       userDocSnap.forEach((doc) => {
         result.push(doc.data());
       });
@@ -28,7 +28,11 @@ export class ProfileService {
       const profil: UserProfile = new UserProfile(
         result[0].firstname,
         result[0].lastname,
-        result[0].email
+        result[0].email,
+        result[0].adress,
+        result[0].postalCode,
+        result[0].city,
+        result[0].country
       );
       this.userProfil.next(profil);
     } catch (error) {

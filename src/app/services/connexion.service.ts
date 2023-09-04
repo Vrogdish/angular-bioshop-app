@@ -7,7 +7,6 @@ import {
 } from '@angular/fire/auth';
 
 import { BehaviorSubject } from 'rxjs';
-import { UserProfile } from '../models/user';
 import { ProfileService } from './profile.service';
 
 @Injectable({
@@ -18,15 +17,14 @@ export class ConnexionService {
     false
   );
   private userData: BehaviorSubject<User> = new BehaviorSubject<any>({});
-  public userProfil: BehaviorSubject<UserProfile> = new BehaviorSubject<any>(
-    {}
-  );
-
   public userAuth: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
   );
+  public loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
 
-  constructor(private auth: Auth,  private profile : ProfileService) {}
+  constructor(private auth: Auth, private profile: ProfileService) {}
 
   toggleModal() {
     this.modalIsOpen.value
@@ -35,17 +33,22 @@ export class ConnexionService {
   }
 
   async login(email: string, password: string) {
-    return await signInWithEmailAndPassword(this.auth, email, password)
+    this.loading.next(true);
+    await signInWithEmailAndPassword(this.auth, email, password)
       .then((result: any) => {
         this.userData.next(result.user);
       })
       .then(async () => {
         await this.profile.getProfile(this.userData.value.uid);
         this.userAuth.next(true);
+        this.modalIsOpen.next(false);
+        
       })
       .catch((error) => {
-        window.alert(error.message);
+        window.alert("Adresse email ou mot de passe invalide");
+        console.log(error)
       });
+      this.loading.next(false)
   }
 
   logout() {

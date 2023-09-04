@@ -3,34 +3,7 @@
     <div class="close" (click)="toggleModal()">
       <i class="fa-regular fa-circle-xmark"></i>
     </div>
-    <div *ngIf="auth === false" class="login">
-      <div class="modal-title">
-        <h2>Se connecter</h2>
-        <p>Acceder à mon compte Bio-shop</p>
-      </div>
-      <form action="#">
-        <div>
-          <label for="">Adresse éléctronique :</label>
-          <input type="email" />
-        </div>
-        <div>
-          <label for="">Mot de passe : </label>
-          <input type="password" />
-          <p>Mot de passe oublié ?</p>
-        </div>
-        <button class="button-large" type="button" (click)="login()">
-          Me connecter
-        </button>
-      </form>
-      <div class="subscribe">
-        <h2>Pas encore inscrit ?</h2>
-        <button class="button-large">Creer un compte</button>
-      </div>
-    </div>
-
-    <div class="my-account" *ngIf="auth === true">
-      <h2>Mon compte</h2>
-      <button class="button-large" (click)="logout()">Se déconnecter</button>
-    </div>
+    <app-sign-in *ngIf="auth === false"></app-sign-in>
+    <app-my-account *ngIf="auth === true"></app-my-account>
   </div>
 </div>

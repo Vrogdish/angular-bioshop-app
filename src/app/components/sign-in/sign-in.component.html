@@ -1,0 +1,29 @@
+<div class="login">
+  <div class="modal-title">
+    <h2>Se connecter</h2>
+    <p>Acceder à mon compte Bio-shop</p>
+  </div>
+  <form [formGroup]="signInForm" (ngSubmit)="login()">
+    <div>
+      <label for="email">Adresse éléctronique :</label>
+      <input type="email" id="SignInEmail" formControlName="email" placeholder="exemple@email.com" autocomplete="off"/>
+      
+    </div>
+    <div>
+      <label for="password">Mot de passe : </label>
+      <input type="password" id="SignInPassword" formControlName="password"/>
+      <p>Mot de passe oublié ?</p>
+    </div>
+    <button *ngIf="loading === false" class="button-large" type="submit" [disabled]="!signInForm.valid">
+      Me connecter
+    </button>
+    <button *ngIf="loading === true" class="button-large" type="button" disabled>
+        Connexion en cours...
+      </button>
+
+  </form>
+  <div class="subscribe">
+    <h2>Pas encore inscrit ?</h2>
+    <button class="button-large" >Creer un compte</button>
+  </div>
+</div>

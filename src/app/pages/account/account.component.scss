@@ -30,60 +30,6 @@
       cursor: pointer;
     }
   }
-  .login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .modal-title {
-    text-align: center;
-    margin: 50px 0;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin-bottom: 50px;
-
-    div {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin: 20px 0;
-
-      p {
-        text-align: end;
-        margin-top: 10px;
-        cursor: pointer;
-      }
-    }
-  }
-
-  label {
-    margin-bottom: 10px;
-  }
-
-  input {
-    height: 40px;
-    border: solid transparent 1px;
-    border-radius: 10px;
-  }
-
-  .button-large {
-    border-radius: 2rem;
-    padding: 15px;
-  }
-
-  .subscribe {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    text-align: center;
-    gap: 50px;
-  }
 }
 
 @keyframes opacity {
@@ -97,10 +43,10 @@
 }
 
 @keyframes slide {
-    from {
-        transform: translate(100%);
-    }
-    to {
-        transform: translate(0);
-    }
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0);
+  }
 }

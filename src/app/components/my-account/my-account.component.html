@@ -1,0 +1,27 @@
+<div class="my-account">
+    <h2>Mon compte</h2>
+    <div class="container">
+      <div>
+        <div class="info">
+          <h3>Information sur le compte :</h3>
+          <p>Nom : {{ profile.lastname }}</p>
+          <p>Prénom : {{ profile.firstname }}</p>
+          <p>Adresse mail : {{ profile.email }}</p>
+          <p>
+            Adresse de livraison : {{ profile.adress }},
+            {{ profile.postalCode }} {{ profile.city }}, {{ profile.country }}
+          </p>
+        </div>
+        <div class="last">
+          <h3>Historique des commandes effectuées</h3>
+          <p>Aucune commande effectuée à ce jour</p>
+        </div>
+      </div>
+      <div class="logout">
+        <button class="button-large" (click)="logout()">
+          Se déconnecter
+        </button>
+        <p class="delete">Supprimer le compte</p>
+      </div>
+    </div>
+  </div>

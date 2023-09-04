@@ -1,0 +1,39 @@
+.my-account {
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 60vh;
+    }
+  
+  
+    h2 {
+      margin: 50px 0;
+      text-align: center;
+    }
+  
+    h3 {
+      margin: 20px 0;
+    }
+  
+    .info {
+      margin-bottom: 50px;
+    }
+    .last {
+      margin-bottom: 80px;
+    }
+    .logout {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      button {
+        width: 60%;
+      }
+      .delete {
+        margin-top: 20px;
+        color: red;
+      }
+    }
+}
